@@ -22,13 +22,7 @@
         <h3 class="font-semibold"> {{ meal.strMeal }}</h3>
         <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis quisquam cumque distinctio ad veniam possimus!</p>
         <div class="flex item-center justify-between">
-          <a 
-          :href="meal.strYoutube" 
-          target="_blank" 
-          class="px-3 py-2 rounded border-2 border-red-600 bg-red-500 hover:bg-red-700 text-white transition-colors"
-          >
-            Video
-          </a>
+          <YouTubeButton :href="meal.strYoutube">YouTube</YouTubeButton>
         </div>
       </div>
     </div>
@@ -40,6 +34,7 @@ import { onMounted, ref } from 'vue';
 import store from '../store';
 import { computed } from '@vue/reactivity';
 import { useRoute } from 'vue-router';
+import YouTubeButton from '../components/YouTubeButton.vue'
 
 const route = useRoute();
 const keyword = ref('')
