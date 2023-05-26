@@ -62,6 +62,7 @@ import axiosClient from '../axiosClient'
 import YouTubeButton from '../components/YouTubeButton.vue';
 
 const route = useRoute()
+// ref({}) is useState() of React.js
 const meal = ref({})
 const instructions = ref({})
 
