@@ -1,6 +1,6 @@
 <template>
   <div  class="bg-white shadow rounded-xl">
-    <router-link :to="{name: 'mealDetails', params: {id: meal.idMeal}}">
+    <router-link :to="{ name: 'mealDetails', params: { id: meal.idMeal } }">
         <img 
           :src="meal.strMealThumb" 
           :alt="meal.strMeal" 
@@ -21,7 +21,10 @@
 import YouTubeButton from '../components/YouTubeButton.vue';
 
 const { meal } = defineProps({
-  meal: Object
+  meal: {
+    required: true,
+    type: Object
+  }
 })
 
 </script>

@@ -13,7 +13,7 @@ export function searchMealsByLetter({ commit }, letter) {
 }
 
 export function searchMealsByIngredient({ commit }, ingredient) {
-  axiosClient.get(`search.php?i=${ingredient}`).then(({ data }) => {
+  axiosClient.get(`filter.php?i=${ingredient}`).then(({ data }) => {
     commit("setMealsByIngredient", data.meals);
   });
 }
