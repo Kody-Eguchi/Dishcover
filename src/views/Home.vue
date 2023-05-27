@@ -1,22 +1,21 @@
 <template>
-<div class="flex flex-col p-8 ">
-</div>
+  <Meals :meals="meals" class="mt-3"/>
 </template>
 
 <script setup>
-import { computed, onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import Meals from '../components/Meals.vue'
 
 import axiosClient from '../axiosClient.js'
 
-
-
-
-const ingredients = ref([])
+const meals = ref([]);
 
 onMounted(async ()=>{
-  const response = await axiosClient.get(`/list.php?i=list`)
-  console.log(response.data)
-  ingredients.value = response.data
+  for (let i = 0; i < 10; i++) {
+    axiosClient
+      .get(`random.php`)
+      .then(({ data }) => meals.value.push(data.meals[0]));
+  }
 })
 
 </script>
